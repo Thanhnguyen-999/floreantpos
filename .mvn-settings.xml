@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <!--
+    Local settings to run the FloreantPOS build.
+    Maven 3.9.x blocks plain HTTP repositories by default via the
+    "maven-default-http-blocker" mirror. The project's orodev.net Nexus
+    (which hosts the custom orocube/pax/ploader artifacts) is only
+    available over HTTP, so we override that blocker for this host.
+  -->
+  <mirrors>
+    <mirror>
+      <id>orodev-http-allow</id>
+      <name>Allow orodev.net over HTTP</name>
+      <url>http://orodev.net:8081/nexus/content/groups/public/</url>
+      <mirrorOf>orodev.net</mirrorOf>
+    </mirror>
+  </mirrors>
+</settings>
